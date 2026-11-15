@@ -1,0 +1,57 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+  <meta charset="UTF-8">
+  <meta name="viewport" content="width=device-width, initial-scale=1.0">
+  <meta name="theme-color" content="#17102d">
+  <title>Interactive Next-Level Login</title>
+  <link rel="stylesheet" href="style.css">
+</head>
+<body>
+  <main class="stage">
+    <div class="ambient ambient-one"></div>
+    <div class="ambient ambient-two"></div>
+
+    <section class="login-card" id="loginCard" aria-labelledby="heading">
+      <div class="avatar" aria-hidden="true">
+        <span class="eye eye-left"><i></i></span>
+        <span class="eye eye-right"><i></i></span>
+      </div>
+      <h1 id="heading">Account Login</h1>
+      <p class="subtitle">Welcome back! Please sign in to continue.</p>
+
+      <form id="loginForm" novalidate>
+        <label class="field">
+          <span class="field-icon" aria-hidden="true">✉</span>
+          <input id="email" name="email" type="email" placeholder="Email Address" autocomplete="email" required>
+        </label>
+        <label class="field">
+          <span class="field-icon lock" aria-hidden="true">♙</span>
+          <input id="password" name="password" type="password" placeholder="Password" autocomplete="current-password" required minlength="6">
+          <button class="visibility" id="togglePassword" type="button" aria-label="Show password" aria-pressed="false">
+            <svg viewBox="0 0 24 24" aria-hidden="true"><path d="M2 12s3.6-7 10-7 10 7 10 7-3.6 7-10 7S2 12 2 12Z"/><circle cx="12" cy="12" r="3"/></svg>
+          </button>
+        </label>
+
+        <div class="form-options">
+          <label class="remember"><input id="remember" type="checkbox"><span>Remember Me</span></label>
+          <button class="text-button" id="forgot" type="button">Forgot Password?</button>
+        </div>
+
+        <p class="message" id="message" role="alert" aria-live="polite"></p>
+        <button class="sign-in" id="signIn" type="submit"><span>Sign In</span><b aria-hidden="true">→</b></button>
+      </form>
+      <p class="bottom-note">Secure access to your account</p>
+    </section>
+
+    <section class="success-card" id="successCard" aria-live="polite" hidden>
+      <div class="success-icon">✓</div>
+      <h2>Welcome Back!</h2>
+      <p>Logging you in...</p>
+      <button id="backButton" type="button">Back to Login</button>
+    </section>
+    <footer>INTERACTIVE LOGIN EXPERIENCE</footer>
+  </main>
+  <script src="script.js"></script>
+</body>
+</html>
